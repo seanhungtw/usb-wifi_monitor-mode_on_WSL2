@@ -1,5 +1,8 @@
-# usb-wifi_monitor-mode_on_WSL2
+- (C) 2024 Sean.Hung <https://github.com/seanhungtw/usb-wifi_monitor-mode_on_WSL2>
+- Extraordinary is you improve yourself every day
 
+# usb-wifi_monitor-mode_on_WSL2
+- This document records how to attach USB WIFI dongle on WSL2 and running it in monitor mode so we can use it to capture WIFI packets.
 - Why use WSL2 to capture wireless packets?
   - WSL2 is more efficient that virtualbox / VMware
   - Some times you only has 1 windows PC, it's convenient if you can finish your job with 1 PC.
