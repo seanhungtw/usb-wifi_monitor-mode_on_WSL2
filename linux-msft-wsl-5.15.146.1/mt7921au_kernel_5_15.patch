@@ -1,0 +1,40 @@
+diff --git a/include/linux/ieee80211.h b/include/linux/ieee80211.h
+index 00ed7c17698d..5dcf07557eb6 100644
+--- a/include/linux/ieee80211.h
++++ b/include/linux/ieee80211.h
+@@ -2228,6 +2228,12 @@ int ieee80211_get_vht_max_nss(struct ieee80211_vht_cap *cap,
+ #define IEEE80211_HE_PHY_CAP9_NOMIMAL_PKT_PADDING_16US			0x80
+ #define IEEE80211_HE_PHY_CAP9_NOMIMAL_PKT_PADDING_RESERVED		0xc0
+ #define IEEE80211_HE_PHY_CAP9_NOMIMAL_PKT_PADDING_MASK			0xc0
++#define IEEE80211_HE_PHY_CAP9_NOMINAL_PKT_PADDING_0US			0x0
++#define IEEE80211_HE_PHY_CAP9_NOMINAL_PKT_PADDING_8US			0x1
++#define IEEE80211_HE_PHY_CAP9_NOMINAL_PKT_PADDING_16US			0x2
++#define IEEE80211_HE_PHY_CAP9_NOMINAL_PKT_PADDING_RESERVED		0x3
++#define IEEE80211_HE_PHY_CAP9_NOMINAL_PKT_PADDING_POS			6
++#define IEEE80211_HE_PHY_CAP9_NOMINAL_PKT_PADDING_MASK			0xc0
+ 
+ #define IEEE80211_HE_PHY_CAP10_HE_MU_M1RU_MAX_LTF			0x01
+ 
+diff --git a/include/net/cfg80211.h b/include/net/cfg80211.h
+index 963a810ed70d..da3cbadd3041 100644
+--- a/include/net/cfg80211.h
++++ b/include/net/cfg80211.h
+@@ -131,6 +131,8 @@ enum ieee80211_channel_flags {
+ 	IEEE80211_CHAN_4MHZ		= 1<<16,
+ 	IEEE80211_CHAN_8MHZ		= 1<<17,
+ 	IEEE80211_CHAN_16MHZ		= 1<<18,
++	IEEE80211_CHAN_NO_320MHZ	= 1<<19,
++	IEEE80211_CHAN_NO_EHT		= 1<<20,
+ };
+ 
+ #define IEEE80211_CHAN_NO_HT40 \
+@@ -5128,6 +5130,9 @@ struct wiphy {
+ 
+ 	struct rfkill *rfkill;
+ 
++	u8 mbssid_max_interfaces;
++	u8 ema_max_profile_periodicity;
++
+ 	char priv[] __aligned(NETDEV_ALIGN);
+ };
+ 
