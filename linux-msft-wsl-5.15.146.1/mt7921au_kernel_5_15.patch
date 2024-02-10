@@ -1,3 +1,7 @@
+#/*  (C) 2024 Sean.Hung <https://github.com/seanhungtw/usb-wifi_monitor-mode_on_WSL2>
+#	Modify include/linux/ieee80211.h & include/net/cfg80211.h in 5.15 
+#	for using 5.18 MTK wifi usb driver in 5.15 kernel
+#*/
 diff --git a/include/linux/ieee80211.h b/include/linux/ieee80211.h
 index 00ed7c17698d..5dcf07557eb6 100644
 --- a/include/linux/ieee80211.h
