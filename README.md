@@ -6,6 +6,12 @@
 - Why use WSL2 to capture wireless packets?
   - WSL2 is more efficient that virtualbox / VMware
   - Some times you only has 1 windows PC, it's convenient if you can finish your job with 1 PC.
+- The chips I tested:
+
+| Chips | Tested WSL2 kernel version | Driver | monitor mode on WSL2 |
+| --- | --- | --- | --- |
+| Mediatek MT7921au | wsl-5.15.146.1 (need porting driver from 5.18) | mt7921u | can work |
+| Realtek rtl8192eu | wsl-5.15.146.1 | rtl8xxxu | can work |
 
 # Step by Step
 1. let's check your WIFI dongle is supported monitor mode on Linux kernel:
